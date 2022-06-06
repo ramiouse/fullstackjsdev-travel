@@ -43,7 +43,23 @@
 @import "utilities";
 @import "print";
 
-//following style in figma design
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/*
+  SETTINGS RESET
+*/
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+/*
+  CUSTOMIZE STYLES
+*/
+
 .brand-text-icon {
   font-style: normal;
   font-size: 26px;
