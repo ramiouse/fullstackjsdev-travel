@@ -6,7 +6,6 @@ import Hero from "parts/Hero";
 // export with extends to component
 export default class LandingPage extends Component {
   render() {
-    // console.log(this.props);
     return (
       <>
         {/* ... : syntax es6, Kalo ada props dari kelas ini akan di masukan juga ke dalam Header class*/}

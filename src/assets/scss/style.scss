@@ -48,18 +48,6 @@
    License: none (public domain)
 */
 
-/*
-  SETTINGS RESET
-*/
-
-* {
-  font-family: "Poppins", sans-serif;
-}
-
-/*
-  CUSTOMIZE STYLES
-*/
-
 .brand-text-icon {
   font-style: normal;
   font-size: 26px;
@@ -73,6 +61,7 @@
 }
 
 header {
+  margin-bottom: 50px;
   font-family: "Poppins", sans-serif;
   border-bottom: 1px solid $gray-200;
   width: 100%;
