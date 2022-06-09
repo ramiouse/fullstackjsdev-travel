@@ -1,12 +1,12 @@
 import React from "react";
 import Button from "elements/Button";
 import BrandIcon from "parts/IconText";
-import { BrowserRouter as Router, Switch, useLocation } from "react-router-dom";
+// import { BrowserRouter as Router, Switch, useLocation } from "react-router-dom";
 
 export default function Header(props) {
   const getNavLinkClass = (path) => {
-    let location = useLocation(); //react-router-dom terbaru pengganti -> "location.pathname"
-    return location.pathname === path ? " active" : "";
+    // let location = useLocation(); untuk versi react-router-dom > 5
+    return props.location.pathname === path ? " active" : "";
   };
 
   return (

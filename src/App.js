@@ -7,10 +7,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Routes>
-          {/* component={LandingPage} */}
-          <Route path="/" element={<LandingPage />}></Route>
-        </Routes>
+        <Route path="/" component={LandingPage}></Route>
       </Router>
     </div>
   );
