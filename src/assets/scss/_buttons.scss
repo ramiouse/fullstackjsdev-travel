@@ -5,7 +5,9 @@
 //
 
 .btn {
-  display: inline-block;
+  // change display & align items to anchor tag
+  display: inline-flex;
+  align-items: center;
   min-height: 50px;
   font-family: $btn-font-family;
   font-weight: $btn-font-weight;
