@@ -1,0 +1,35 @@
+@import "../../../assets/scss/colorVariable";
+.input-number {
+    .input-group {
+        bacgkround-color: $white;
+        .input-group-text {
+            border: 0;
+            cursor: pointer;
+            color: $white;
+            padding: 0;
+            border-radius: 4px !important;
+            font-size: 24px;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            justify-content: center;
+            user-select: none;
+            &.minus {
+                bacgkround-color: $red;
+            }
+            &.plus {
+                bacgkround-color:$teal;
+            }
+        }
+
+        input.form-control {
+            border: 0;
+            border-radius: 0;
+            outline: 0
+            box-shadow: none;
+            bacgkround-color: $gray-100;
+            padding: 0.575rem 1rem;
+            text-algin: center;
+        }
+    }
+}
