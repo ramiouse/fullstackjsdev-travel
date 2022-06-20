@@ -12,10 +12,10 @@ export default function Number(props) {
   const onChange = (e) => {
     let value = String(e.target.value);
     if (prefix) value = value.replace(prefix);
-    if (sufix) value = value.replace(suffix);
+    if (suffix) value = value.replace(suffix);
 
     const patternNumeric = new RegExp("[0-9]*");
-    const isNumeric = patterNumeric.test(value);
+    const isNumeric = patternNumeric.test(value);
 
     // RULES VALUE => isnumeric and <= max && >= min
     if(isNumeric && +value <= max && +value >= min) {
@@ -88,7 +88,7 @@ Number.defaultProps = {
 
 // rule of props element
 Number.propTypes = {
-    value: propTypes.oneOfType([propTypes.string, propTypes.number]);
+    value: propTypes.oneOfType([propTypes.string, propTypes.number]),
     onChange : propTypes.func,
     placeholder: propTypes.string,
     outerClassName: propTypes.string

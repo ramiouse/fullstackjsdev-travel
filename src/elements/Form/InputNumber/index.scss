@@ -1,4 +1,8 @@
-@import "../../../assets/scss/colorVariable";
+
+@import "../../../assets/scss/colorVariables";
+
+$colore-1 :#FEDC41;
+
 .input-number {
     .input-group {
         bacgkround-color: $white;
@@ -13,23 +17,25 @@
             height: 45px;
             display: flex;
             justify-content: center;
-            user-select: none;
+            user-select: none; 
             &.minus {
-                bacgkround-color: $red;
+                background-color: $red;
             }
             &.plus {
-                bacgkround-color:$teal;
+                background-color:$teal;
             }
         }
 
         input.form-control {
+            min-height: 45px;
             border: 0;
             border-radius: 0;
-            outline: 0
+            outline: 0;
             box-shadow: none;
             bacgkround-color: $gray-100;
+            // 16px x 0.575 = px
             padding: 0.575rem 1rem;
-            text-algin: center;
+            text-align: center;
         }
     }
 }
