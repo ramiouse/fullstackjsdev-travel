@@ -51,39 +51,40 @@ export default function Date(props) {
   }`;
 
   // return html as show element
-  return;
-  <div
-    ref={refDate}
-    className={["input-date mb-3", props.outerClassName].join(" ")}
-  >
-    <div className="input-group">
-      <div className="input-group-prepend bg-gray-900">
-        <span className="input-group-text">
-          <img src={iconCalendar} alt="icon calendar" />
-        </span>
-      </div>
-      <input
-        type="text"
-        readOnly
-        className="form-control"
-        value={displayDate}
-        placeholder={placeholder}
-        onClick={() => setIsShowed(!isShowed)}
-      />
-
-      {isShowed && (
-        <div className="date-range-wrapper">
-          <DateRange
-            editableDateInputs={true}
-            onChange={datePickerChange}
-            moveRangeOnFirstSelection={false}
-            onRangeFocusChange={check}
-            ranges={[value]}
-          />
+  return (
+    <div
+      ref={refDate}
+      className={["input-date mb-3", props.outerClassName].join(" ")}
+    >
+      <div className="input-group">
+        <div className="input-group-prepend bg-gray-900">
+          <span className="input-group-text">
+            <img src={iconCalendar} alt="icon calendar" />
+          </span>
         </div>
-      )}
+        <input
+          readOnly
+          type="text"
+          className="form-control"
+          value={displayDate}
+          placeholder={placeholder}
+          onClick={() => setIsShowed(!isShowed)}
+        />
+
+        {isShowed && (
+          <div className="date-range-wrapper">
+            <DateRange
+              editableDateInputs={true}
+              onChange={datePickerChange}
+              moveRangeOnFirstSelection={false}
+              onRangeFocusChange={check}
+              ranges={[value]}
+            />
+          </div>
+        )}
+      </div>
     </div>
-  </div>;
+  );
 }
 
 Date.propTypes = {
