@@ -6,6 +6,7 @@ export default (date) => {
     day: "2-digit",
   });
 
+  // return [{month},{year},{day}]
   const [{ value: mo }, , { value: da }] = dtf.formatToParts(d);
 
   return `${da} ${mo}`;

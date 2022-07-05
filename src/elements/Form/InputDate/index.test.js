@@ -43,22 +43,27 @@ const setup = () => {
 // TESTING RULES
 
 test("Should have wrapper with className .form-control", () => {
+  // ambil input dari setup
   const { wrapper } = setup();
   expect(wrapper).toBeInTheDocument();
 });
 
 test("Should have tag <input> and has className .form-control", () => {
+  // ambil input dari setup
   const { input } = setup();
   expect(input).toBeInTheDocument();
 });
 
 test("Should show date picker when click input field", () => {
+  // ambil container dan input dari setup
   const { container, input } = setup();
 
   // screen.debug();
+  // button: 1 (klik kiri mouse)
   fireEvent.click(input, { button: 1 });
   const datePickerWrapper = container.querySelector(`.date-range-wrapper`);
   // screen.debug();
 
+  // ekspetasikan datePickerWrapper sudah ada di DOM/ Document
   expect(datePickerWrapper).toBeInTheDocument();
 });
