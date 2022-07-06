@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
-import Button from "./index";
+import Breadcrumb from "./index";
 
 const setup = () => {
   const breadcrumbList = [
@@ -10,9 +10,9 @@ const setup = () => {
   ];
 
   const { container } = render(
-    <Route>
+    <Router>
       <Breadcrumb data={breadcrumbList} />
-    </Route>
+    </Router>
   );
   const breadcrumb = container.querySelector(`.breadcrumb`);
 
@@ -21,10 +21,10 @@ const setup = () => {
   };
 };
 
-test("Should have ol with className .breadcrumb and have text Home & House Details", () => {
+test("Should have <ol> with className .breadcrumb and have text Home & House Details", () => {
   //   ambil breadcrumb dari setup
   const { breadcrumb } = setup();
   expect(breadcrumb).toBeInTheDocument();
-  expect(breadcrumb).toHavetextContent("Home");
-  expect(breadcrumb).toHavetextContent("House Details");
+  expect(breadcrumb).toHaveTextContent("Home");
+  expect(breadcrumb).toHaveTextContent("House Details");
 });
