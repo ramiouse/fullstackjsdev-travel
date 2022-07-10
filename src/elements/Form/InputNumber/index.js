@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import propTypes from "prop-types";
 
 import "./index.scss";
@@ -7,30 +7,28 @@ import "./index.scss";
 export default function Number(props) {
   const { value, placeholder, min, max, name, prefix, suffix, isSuffixPlural } =
     props;
-  const [InputValue, setInputValue] = useState(`${prefix}${value}${suffix}`);
 
+  // const [InputValue, setInputValue] = useState(`${prefix}${value}${suffix}`);
   // FUNCTION ONCHANGE => rules when onChange is called / Form input is changed
   const onChange = (e) => {
     let value = String(e.target.value);
-    if (prefix) value = value.replace(prefix);
-    if (suffix) value = value.replace(suffix);
 
-    const patternNumeric = new RegExp("[0-9]*");
-    const isNumeric = patternNumeric.test(value);
+    // ubah value inputan pake suffix dan prefix
+    // if (prefix) value = value.replace(prefix);
+    // if (suffix) value = value.replace(suffix);
+
+    // Cek value is numeric
+    // const patternNumeric = new RegExp("[0-9]*");
+    // const isNumeric = patternNumeric.test(value);
 
     // RULES VALUE => isnumeric and <= max && >= min
-    if (isNumeric && +value <= max && +value >= min) {
+    if (+value <= max && +value >= min) {
       props.onChange({
         target: {
           name: name,
           value: +value,
         },
       });
-
-      // CALL FUNCTION => setInputValue
-      setInputValue(
-        `${prefix}${value}${suffix}${isSuffixPlural && value > 1 ? "s" : ""}`
-      );
     }
   };
 
@@ -59,8 +57,7 @@ export default function Number(props) {
       <div className="input-group">
         <div className="input-group-prepend">
           <span className="input-group-text minus" onClick={minus}>
-            {" "}
-            -{" "}
+            -
           </span>
         </div>
         <input
@@ -68,10 +65,13 @@ export default function Number(props) {
           min={min}
           max={max}
           name={name}
+          readOnly
           pattern="[0-9]*"
           className="form-control"
           placeholder={placeholder ? placeholder : "0"}
-          value={String(InputValue)}
+          value={`${prefix}${value}${suffix}${
+            isSuffixPlural && value > 1 ? "s" : ""
+          }`}
           onChange={onChange}
         />
         <div className="input-group-append">

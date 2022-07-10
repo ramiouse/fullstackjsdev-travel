@@ -109,7 +109,12 @@ section {
 }
 
 .card {
-  height: 100%;
+  &.bordered {
+    border: 1px solid $gray-200;
+  }
+
+  border-radius: 15px;
+  // height: 100%;
 
   .tag {
     z-index: 3;
@@ -149,7 +154,6 @@ section {
     overflow: hidden;
     cursor: pointer;
     height: 100%;
-    border-radius: 15px;
     &:after {
       position: absolute;
       content: "";
@@ -244,5 +248,14 @@ footer {
     margin: 50px 0;
     font-weight: 300;
     color: $gray-500;
+  }
+}
+
+// styleing for description detail page (left tab)
+main {
+  p {
+    color: $gray-500;
+    font-weight: 300;
+    // line-height: 27.2px;
   }
 }
