@@ -15,6 +15,8 @@ function File(props) {
     inputClassName,
   } = props;
 
+  // fungsi hooks dari react
+  // default refInputFile null
   const refInputFile = useRef(null);
 
   return (
@@ -33,6 +35,7 @@ function File(props) {
           ref={refInputFile}
           name={name}
           type="file"
+          // hide input file biar ngg keliatan di dom (aslinya ada)
           className="d-none"
           value={value}
           onChange={props.onChange}
@@ -66,6 +69,7 @@ File.defaultProps = {
 
 File.propTypes = {
   name: propTypes.string.isRequired,
+  // file name nerima bentuk file nya apa saja
   accept: propTypes.string.isRequired,
   value: propTypes.string.isRequired,
   onChange: propTypes.func.isRequired,

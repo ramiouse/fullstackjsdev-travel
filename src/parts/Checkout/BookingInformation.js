@@ -6,6 +6,7 @@ export default function BookingInformation(props) {
   const { data, ItemDetails, checkout } = props;
   return (
     <Fade>
+      {/*container */}
       <div className="container" style={{ marginBottom: 30 }}>
         <div className="row justify-content-center align-items-center">
           <div className="col-5 border-right py-5" style={{ paddingRight: 80 }}>
@@ -30,6 +31,7 @@ export default function BookingInformation(props) {
                     ${+checkout.duration * ItemDetails.price} USD
                     <span className="text-gray-500"> per </span>
                     {checkout.duration} {ItemDetails.unit}
+                    {/* plural in english if value is greater than 1 */}
                     {+checkout.duration > 1 ? "s" : ""}
                   </span>
                 </div>
