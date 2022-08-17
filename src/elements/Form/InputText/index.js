@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 import "./index.scss";
 
 function Text(props) {
@@ -21,7 +21,7 @@ function Text(props) {
   if (type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (type === "tel") pattern = "[0-9]*";
 
-  const onChange = (event) => {
+  onChange = (event) => {
     // setting prop target
     const target = {
       target: {
@@ -95,9 +95,9 @@ Text.propTypes = {
   inputClassName: propTypes.string,
   name: propTypes.string.isRequired,
   onChange: propTypes.func.isRequired,
-  value: propTypes.onOfType([propTypes.number, propTypes.string]).isRequired,
-  prepend: propTypes.onOfType([propTypes.number, propTypes.string]),
-  append: propTypes.onOfType([propTypes.number, propTypes.string]),
+  value: propTypes.oneOfType([propTypes.number, propTypes.string]).isRequired,
+  prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
+  append: propTypes.oneOfType([propTypes.number, propTypes.string]),
 };
 
 export default Text;

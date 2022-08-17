@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import PropTypes from "prop-types";
+import propTypes from "prop-types";
 import "./index.scss";
 
 function File(props) {
@@ -73,8 +73,8 @@ File.propTypes = {
   accept: propTypes.string.isRequired,
   value: propTypes.string.isRequired,
   onChange: propTypes.func.isRequired,
-  prepend: propTypes.onOfType([propTypes.number, propTypes.string]),
-  append: propTypes.onOfType([propTypes.number, propTypes.string]),
+  prepend: propTypes.oneOfType([propTypes.number, propTypes.string]),
+  append: propTypes.oneOfType([propTypes.number, propTypes.string]),
   placeholder: propTypes.string,
   outerClassName: propTypes.string,
   inputClassName: propTypes.string,

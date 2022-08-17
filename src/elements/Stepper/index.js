@@ -18,10 +18,18 @@ export default function Stepper(props) {
     if (+indexStep < totalStep) setCurrentStep(stepsKeys[indexStep + 1]);
   }
 
+  // return element with react fragment mode
   return <> {props.children(prevStep, nextStep, CurrentStep, steps)} </>;
 }
 
+// intial proptypes
 Stepper.propTypes = {
   data: propTypes.object.isRequired,
   initialStep: propTypes.string.isRequired,
 };
+
+// create initial for all class included with Stepper
+export { default as Numbering } from "./Numbering";
+export { default as Meta } from "./Meta";
+export { default as MainContent } from "./MainContent";
+export { default as Controller } from "./Controller";
