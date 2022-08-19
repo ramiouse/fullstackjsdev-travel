@@ -101,7 +101,7 @@ export default class Checkout extends Component {
               <Numbering
                 data={steps}
                 current={CurrentStep}
-                style={{ marginBottom: 50 }}
+                style={{ marginBottom: 50 }} // 50px
               />
 
               {/* meta */}
