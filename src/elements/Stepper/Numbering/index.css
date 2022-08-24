@@ -1,0 +1,62 @@
+ol.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+ol.stepper li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  color: #fff;
+}
+ol.stepper li:after {
+  position: absolute;
+  content: "";
+  z-index: 2;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-image: url("../../../assets/images/icons/ic_checklist.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #1abc9c;
+  transform: scale(1);
+  transition: 0.35s transform ease-in-out;
+}
+ol.stepper li:not(:last-child) {
+  margin-right: 60px;
+}
+ol.stepper li:not(:last-child):before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  left: 100%;
+  width: 60px;
+  height: 1px;
+  background-color: #e9ecef;
+}
+ol.stepper li.active {
+  background-color: #e9ecef;
+  color: #b0b0b0;
+}
+ol.stepper li.active:after {
+  z-index: -1;
+  background: #fff;
+  border: 1px solid #e9ecef;
+  transform: scale(1.2);
+}
+ol.stepper li.active ~ li {
+  color: #b0b0b0;
+  background: #e9ecef;
+}
+ol.stepper li.active ~ li:after {
+  content: none;
+}/*# sourceMappingURL=index.css.map */

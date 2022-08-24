@@ -1,6 +1,9 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
 
+// untuk title sama description
+// ngg pake tes, karena cuma tampilin div doang
+
 export default function Meta({ data, current }) {
   return (
     <Fade delay={300}>

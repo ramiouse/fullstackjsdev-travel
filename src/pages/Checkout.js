@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Fade from "react-reveal/Fade";
 
+import Header from "parts/Header";
+import Button from "elements/Button";
 // import Stepper, with classes including
 import Stepper, {
   Numbering,
@@ -9,8 +11,6 @@ import Stepper, {
   Controller,
 } from "elements/Stepper";
 
-import Header from "parts/Header";
-import Button from "elements/Button";
 import BookingInformation from "parts/Checkout/BookingInformation";
 import Payment from "parts/Checkout/Payment";
 import Completed from "parts/Checkout/Completed";
@@ -109,6 +109,86 @@ export default class Checkout extends Component {
 
               {/* main content */}
               <MainContent data={steps} current={CurrentStep} />
+
+              {/* 01 Template for bookingInformation */}
+              {CurrentStep === "bookingInformation" && (
+                <Controller>
+                  {data.firstName !== "" &&
+                    data.lastName !== "" &&
+                    data.email !== "" &&
+                    data.phone !== "" && (
+                      <Fade>
+                        <Button
+                          className="btn mb-3"
+                          type="button"
+                          isBlock
+                          isPrimary
+                          hasShadow
+                          onClick={nextStep}
+                        >
+                          Continue to Book
+                        </Button>
+                      </Fade>
+                    )}
+                  <Button
+                    className="btn"
+                    type="link"
+                    isBlock
+                    isLight
+                    href={`/properties/${ItemDetails._id}`}
+                  >
+                    Cancel
+                  </Button>
+                </Controller>
+              )}
+
+              {/* 02 Template for payment */}
+              {CurrentStep === "payment" && (
+                <Controller>
+                  {data.firstName !== "" &&
+                    data.lastName !== "" &&
+                    data.email !== "" &&
+                    data.phone !== "" && (
+                      <Fade>
+                        <Button
+                          className="btn mb-3"
+                          type="button"
+                          isBlock
+                          isPrimary
+                          hasShadow
+                          onClick={nextStep}
+                        >
+                          Continue to Book
+                        </Button>
+                      </Fade>
+                    )}
+                  <Button
+                    className="btn"
+                    type="button"
+                    isBlock
+                    isLight
+                    onClick={prevStep}
+                  >
+                    Cancel
+                  </Button>
+                </Controller>
+              )}
+
+              {/* 03 Template for Completed */}
+              {CurrentStep === "completed" && (
+                <Controller>
+                  <Button
+                    className="btn"
+                    type="link"
+                    isBlock
+                    isPrimary
+                    hasShadow
+                    href=""
+                  >
+                    Back To Home
+                  </Button>
+                </Controller>
+              )}
             </>
           )}
         </Stepper>

@@ -9,7 +9,6 @@ function Text(props) {
     outerClassName,
     inputClassName,
     name,
-    onChange,
     value,
     prepend,
     append,
@@ -21,7 +20,7 @@ function Text(props) {
   if (type === "email") pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (type === "tel") pattern = "[0-9]*";
 
-  onChange = (event) => {
+  const onChange = (event) => {
     // setting prop target
     const target = {
       target: {

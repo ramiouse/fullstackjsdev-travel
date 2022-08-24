@@ -67,6 +67,16 @@ export default function BookingInformation(props) {
                 value={data.email}
                 onChange={props.onChange}
               />
+
+              {/* PHONE */}
+              <label htmlFor="phone">Phone Number</label>
+              <InputText
+                id="phone"
+                name="phone"
+                type="tel"
+                value={data.phone}
+                onChange={props.onChange}
+              />
             </Fade>
           </div>
         </div>
