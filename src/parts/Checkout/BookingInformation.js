@@ -1,9 +1,11 @@
 import React from "react";
 import Fade from "react-reveal/Fade";
+
 import { InputText } from "elements/Form";
 
 export default function BookingInformation(props) {
   const { data, ItemDetails, checkout } = props;
+  console.log(ItemDetails);
   return (
     <Fade>
       {/*container */}
@@ -13,6 +15,7 @@ export default function BookingInformation(props) {
             <Fade delay={300}>
               <figure className="img-wrapper" style={{ height: 270 }}>
                 <img
+                  className="img-cover"
                   src={ItemDetails.imageUrls[0].url}
                   alt={ItemDetails.name}
                 />

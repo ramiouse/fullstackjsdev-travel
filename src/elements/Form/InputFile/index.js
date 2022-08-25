@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import propTypes from "prop-types";
 import "./index.scss";
 
@@ -7,7 +7,6 @@ function File(props) {
     name,
     accept,
     value,
-    onChange,
     prepend,
     append,
     placeholder,
@@ -56,9 +55,6 @@ function File(props) {
           </div>
         )}
       </div>
-
-      {/* kalo ada error show it message in here */}
-      {HasError && <span className="error-helper">{HasError}</span>}
     </div>
   );
 }

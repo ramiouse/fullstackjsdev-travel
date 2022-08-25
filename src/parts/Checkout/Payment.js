@@ -6,8 +6,9 @@ import logoMandiri from "assets/images/logo-mandiri.jpg";
 
 export default function Payment(props) {
   const { data, ItemDetails, checkout } = props;
-  const subTotal = ItemDetails.price * checkout.duration;
 
+  const tax = 10;
+  const subTotal = ItemDetails.price * checkout.duration;
   // get grandTotal with Tax parameters
   const grandTotal = (subTotal * tax) / 100 + subTotal;
 
@@ -22,10 +23,10 @@ export default function Payment(props) {
               <p className="mb-4">Transfer Pembayaran:</p>
               <p>Tax: {tax}%</p>
               <p>Sub total: ${subTotal} USD</p>
-              <p>Total: ${grandtotal} USD</p>
+              <p>Total: ${grandTotal} USD</p>
               <div className="row mt-4">
                 <div className="col-3 text-right">
-                  <img src={loboBca} alt="bank central asia" width="60" />
+                  <img src={logoBca} alt="bank central asia" width="60" />
                 </div>
                 <div className="col">
                   <dl>
