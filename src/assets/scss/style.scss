@@ -48,9 +48,8 @@
 @import "print";
 
 .brand-text-icon {
-  font-style: normal;
   font-size: 26px;
-  font-weight: 700;
+  font-weight: 500;
   font-family: "Poppins", sans-serif;
   color: $primary;
   &:hover {
@@ -179,7 +178,7 @@ section {
       bottom: 0;
       transform: scale(1.1);
       transition: 0.25s transform ease-in-out;
-      border-radius: $border-radius; // bootstrap border radius default
+      // border-radius: $border-radius; // bootstrap border radius default
     }
 
     .meta-wrapper {

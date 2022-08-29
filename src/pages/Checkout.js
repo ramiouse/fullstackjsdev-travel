@@ -145,10 +145,9 @@ export default class Checkout extends Component {
               {/* 02 Template for payment */}
               {CurrentStep === "payment" && (
                 <Controller>
-                  {data.firstName !== "" &&
-                    data.lastName !== "" &&
-                    data.email !== "" &&
-                    data.phone !== "" && (
+                  {data.proofPayment !== "" &&
+                    data.bankName !== "" &&
+                    data.bankHolder !== "" && (
                       <Fade>
                         <Button
                           className="btn mb-3"

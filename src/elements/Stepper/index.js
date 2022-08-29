@@ -1,20 +1,26 @@
 import React, { useState } from "react";
 import propTypes from "prop-types";
-// import "./Numbering/index.scss";
 
 export default function Stepper(props) {
   const { steps, initialStep } = props;
+  // get all keys of data object
   const stepsKeys = Object.keys(steps);
+
+  // set array of Current(get current step) & Setting (set/update current) For it
   const [CurrentStep, setCurrentStep] = useState(
     stepsKeys.indexOf(initialStep) > -1 ? initialStep : stepsKeys[0]
   );
+  // get array keys of data
   const totalStep = Object.keys(steps).length;
+  // current steps = keberapa?
   const indexStep = stepsKeys.indexOf(CurrentStep);
 
+  // prevstep when click
   function prevStep() {
     if (+indexStep > 0) setCurrentStep(stepsKeys[indexStep - 1]);
   }
 
+  // nextstep when click
   function nextStep() {
     if (+indexStep < totalStep) setCurrentStep(stepsKeys[indexStep + 1]);
   }
